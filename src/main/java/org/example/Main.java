@@ -19,13 +19,14 @@ public class Main {
         testPlanets.add(new Planet(8, "NewEggnog", newEggnogSatellites));
 
         System.out.println(testPlanets.toString());
-        //sortPlanets(testPlanets);
+        sortPlanets(testPlanets);
         System.out.println(testPlanets.toString());
     }
     public static void sortPlanets(ArrayList<Planet> planets) {
         quickSortPlanets(planets, 0, planets.size()-1);
     }
 
+    //from memory
     public static void quickSortPlanets(ArrayList<Planet> planets, int start, int end) {
         if (end-start <= 1) return;
 
