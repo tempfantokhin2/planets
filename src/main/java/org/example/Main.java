@@ -22,4 +22,32 @@ public class Main {
         //sortPlanets(testPlanets);
         System.out.println(testPlanets.toString());
     }
+    public static void sortPlanets(ArrayList<Planet> planets) {
+        quickSortPlanets(planets, 0, planets.size()-1);
+    }
+
+    public static void quickSortPlanets(ArrayList<Planet> planets, int start, int end) {
+        if (end-start <= 1) return;
+
+        //set pivot
+        int pivotValue = planets.get(start).getSatelliteCount();
+        int pivotIndex = start;
+
+        int partitionIndex = start;
+        for (int i = start+1; i <= end; i++) {
+            if(planets.get(i).getSatelliteCount() <= pivotValue) {
+                //place lesser elements on the left
+                partitionIndex++;
+                Collections.swap(planets, partitionIndex, i);
+            }
+        }
+
+        //place pivot element in between
+        Collections.swap(planets, partitionIndex, pivotIndex);
+
+        //call quick sort for both partitions
+        quickSortPlanets(planets, start, partitionIndex-1);
+        quickSortPlanets(planets, partitionIndex+1, end);
+
+    }
 }
