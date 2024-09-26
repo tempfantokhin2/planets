@@ -61,20 +61,22 @@ public class Main {
      * @param end     The ending index for the current partition.
      */
     public static void quickSortPlanets(ArrayList<Planet> planets, int start, int end) {
-        // Base case: If the partition size is 1 or less, return immediately
-        if (end - start <= 1) return;
+        // Base case
+        if (start >= end) return;
 
         // Set pivot element
         int pivotValue = planets.get(start).getSatelliteCount();
         int pivotIndex = start;
+
+        // Skip pivot element
         int partitionIndex = start;
 
         // Partition the array
+        // Skip pivot element
         for (int i = start + 1; i <= end; i++) {
             if (planets.get(i).getSatelliteCount() <= pivotValue) {
                 // Swap elements to place lesser elements on the left
-                partitionIndex++;
-                Collections.swap(planets, partitionIndex, i);
+                Collections.swap(planets, ++partitionIndex, i);
             }
         }
 
