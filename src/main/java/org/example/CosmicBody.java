@@ -1,7 +1,7 @@
 package org.example;
 
 /**
- * Represents a celestial body in our solar system.
+ * Represents a celestial body in space.
  */
 public class CosmicBody {
     //The mass of the planet.
@@ -12,9 +12,9 @@ public class CosmicBody {
     Satellite[] satellites;
 
     /**
-     * Returns a string representation of the Planet object.
+     * Returns a string representation of the CosmicBody object.
      *
-     * @return A formatted string containing the planet's mass and name.
+     * @return A formatted string containing the cosmic body's mass and name.
      */
     @Override
     public String toString() {
@@ -22,11 +22,11 @@ public class CosmicBody {
     }
 
     /**
-     * Constructs a new Planet object.
+     * Constructs a new CosmicBody object.
      *
-     * @param mass The mass of the planet.
-     * @param name The name of the planet.
-     * @param satellites An array of Satellite objects associated with this planet.
+     * @param mass The mass of the cosmic object.
+     * @param name The name of the cosmic object.
+     * @param satellites An array of Satellite objects associated with this cosmic object.
      */
     public CosmicBody(double mass, String name, Satellite[] satellites) {
         this.mass = mass;
@@ -35,7 +35,7 @@ public class CosmicBody {
     }
 
     /**
-     * Gets the number of satellites associated with this planet.
+     * Gets the number of satellites associated with this cosmic body.
      *
      * @return The number of satellites if any, otherwise 0.
      */
